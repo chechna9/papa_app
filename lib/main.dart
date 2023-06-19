@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:papa_app/presentation/Screens/home_screen.dart';
+import 'package:papa_app/routes/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,8 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,20 +16,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Demo Home Page'),
-      ),
+      initialRoute: HomePage.id,
+      onGenerateRoute: AppRouter().onGenerateRoute,
     );
   }
 }
