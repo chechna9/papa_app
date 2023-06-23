@@ -4,14 +4,14 @@ import 'package:path/path.dart';
 
 class SqfliteDataSource {
   // db consts
-  static const String _dbName = 'papa.db';
+  static const String _dbName = 'papa6.db';
   static const int _dbVersion = 1;
 
   // helper consts
 
   // SciDeg
   static const String _sciDegTable = 'sci_deg';
-  static const String _sciDegId = '_id';
+  static const String _sciDegId = 'id';
   static const String _sciDegName = 'name';
   static const String _sciDegDegree = 'degree';
   static const List<SciDeg> _defaultSciDegs = [
@@ -26,44 +26,39 @@ class SqfliteDataSource {
   // db
   Database? _db;
   Future<void> initDatabase() async {
-    print("----------------init database-------------------------------------");
     final databasesPath = await getDatabasesPath();
     String path = join(databasesPath, _dbName);
-    print("----------------path $path-------------------------------------");
+
     _db = await openDatabase(
       path,
       version: _dbVersion,
       onCreate: (db, version) async {
-        print(
-            "----------------db ${db.path}-------------------------------------");
-        if (_db != null) {
-          // crating SciDeg table
-          await db.execute('''
+        // crating SciDeg table
+        await db.execute('''
         Create Table $_sciDegTable (
           $_sciDegId INTEGER PRIMARY KEY AUTOINCREMENT,
           $_sciDegName TEXT NOT NULL,
           $_sciDegDegree INTEGER NOT NULL
         )
         ''');
-          // inserting the SciDeg into the table
-          await db.transaction((txn) async {
-            final batch = txn.batch();
-            for (SciDeg deg in _defaultSciDegs) {
-              batch.insert(_sciDegTable, deg.toJson());
-            }
-            await batch.commit();
-          });
-        }
+        // inserting the SciDeg into the table
+        await db.transaction((txn) async {
+          final batch = txn.batch();
+          for (SciDeg deg in _defaultSciDegs) {
+            batch.insert(_sciDegTable, deg.toJson());
+          }
+          await batch.commit();
+        });
       },
     );
   }
 
   Future<List<SciDeg>> getSciAllDegs() async {
-    List<Map<String, dynamic>> rawResult = await _db!.query(_sciDegTable);
+    final rawResult = await _db!.query(_sciDegTable);
     List<SciDeg> result = [];
-    rawResult.map((e) {
-      result.add(SciDeg.fromJson(e));
-    });
+    for (Map<String, dynamic> raw in rawResult) {
+      result.add(SciDeg.fromJson(raw));
+    }
     return result;
   }
 }
