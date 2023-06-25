@@ -17,8 +17,8 @@ mixin SchoolSqlHelper {
     $email TEXT NOT NULL,
     $directorId INTEGER NOT NULL,
     $cordTeacherId INTEGER NOT NULL,
-    FOREIGN KEY ($directorId) REFERENCES director ($id),
-    FOREIGN KEY ($cordTeacherId) REFERENCES teacher ($id)
+    FOREIGN KEY ($directorId) REFERENCES director (id) ON DELETE CASCADE,
+    FOREIGN KEY ($cordTeacherId) REFERENCES teacher (id) ON DELETE CASCADE
   );
   ''';
 }

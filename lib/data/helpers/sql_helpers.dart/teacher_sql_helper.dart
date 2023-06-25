@@ -24,27 +24,27 @@ mixin TeacherSqlHelper {
   static String createTableTeacher() => '''
   Create Table $teacherTable(
     $teacherId INTEGER PRIMARY KEY AUTOINCREMENT,
+    $teacherSciDegId INTEGER NOT NULL,
+    $teacherSchoolId INTEGER NOT NULL,
+    $teacherStatusId INTEGER NOT NULL,
     $teacherFamilyName TEXT NOT NULL,
     $teacherFirstName TEXT NOT NULL,
     $teacherBeforeMariageName TEXT NOT NULL,
     $teacherDateOfBirth TEXT NOT NULL,
     $teacherPlaceOfBirth TEXT NOT NULL,
     $teacherDateOfFirstAppointment TEXT NOT NULL,
-    $teacherSchoolId INTEGER NOT NULL,
-    $teacherStatusId INTEGER NOT NULL,
     $teacherEchelon INTEGER NOT NULL,
     $teacherLastDeg INTEGER NOT NULL,
     $teacherDateOfValid TEXT NOT NULL,
-    $teacherSciDegId INTEGER NOT NULL,
     $teacherDateOfLastAudit TEXT NOT NULL,
     $teacherAdminMark INTEGER NOT NULL,
     $teacherPedagogicalMark INTEGER NOT NULL,
     $teacherRemarks TEXT NOT NULL,
     $teacherEmail TEXT NOT NULL,
-    $teacherGender TEXT NOT NULL
-    FOREIGN KEY ($teacherSchoolId) REFERENCES school (id),
-    FOREIGN KEY ($teacherStatusId) REFERENCES status (id),
-    FOREIGN KEY ($teacherSciDegId) REFERENCES sci_deg (id),
-  )
+    $teacherGender TEXT NOT NULL,
+    FOREIGN KEY ($teacherSchoolId) REFERENCES school (id) ON DELETE CASCADE,
+    FOREIGN KEY ($teacherStatusId) REFERENCES status (id) ON DELETE CASCADE,
+    FOREIGN KEY ($teacherSciDegId) REFERENCES sci_deg (id) ON DELETE CASCADE
+  );
 ''';
 }

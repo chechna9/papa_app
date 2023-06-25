@@ -17,7 +17,7 @@ mixin SciDegSqlHelper {
   ];
   static String createTableSciDeg() {
     return '''
-        Create Table $sciDegName (
+        Create Table $sciDegTable (
           $sciDegId INTEGER PRIMARY KEY AUTOINCREMENT,
           $sciDegName TEXT NOT NULL,
           $sciDegDegree INTEGER NOT NULL
