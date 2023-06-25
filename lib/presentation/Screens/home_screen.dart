@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:papa_app/res/app_context_extension.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,10 +8,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Image.asset(context.res.drawable.darkLogo),
-      ),
+    return Center(
+      child: SvgPicture.asset(context.res.drawable.darkLogo),
     );
   }
 }

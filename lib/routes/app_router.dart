@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:papa_app/presentation/Screens/base_layout.dart';
 import 'package:papa_app/presentation/Screens/home_screen.dart';
 
 class AppRouter {
@@ -6,7 +7,7 @@ class AppRouter {
     switch (settings.name) {
       case HomePage.id:
         return MaterialPageRoute(
-          builder: (_) => const HomePage(),
+          builder: (_) => const BaseLayout(content: HomePage()),
         );
       default:
         return null;

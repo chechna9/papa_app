@@ -44,6 +44,7 @@ dependencies:
   path: ^1.8.3
   get_it: ^7.6.0
   sqflite_common_ffi:
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
