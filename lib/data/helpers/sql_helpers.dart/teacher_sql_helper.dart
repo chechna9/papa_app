@@ -18,6 +18,7 @@ mixin TeacherSqlHelper {
   static const String teacherAdminMark = 'admin_mark';
   static const String teacherPedagogicalMark = 'pedagogical_mark';
   static const String teacherRemarks = 'remarks';
+  static const String teacherEmail = "email";
   static const String teacherGender = 'gender';
 
   // Todo: add the foreign key constraints
@@ -40,6 +41,7 @@ mixin TeacherSqlHelper {
     $teacherAdminMark INTEGER NOT NULL,
     $teacherPedagogicalMark INTEGER NOT NULL,
     $teacherRemarks TEXT NOT NULL,
+    $teacherEmail TEXT NOT NULL,
     $teacherGender TEXT NOT NULL
   )
 ''';

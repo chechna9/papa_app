@@ -37,6 +37,7 @@ mixin _$TeacherModel {
   int get adminMark => throw _privateConstructorUsedError;
   int get pedagogicalMark => throw _privateConstructorUsedError;
   String? get remarks => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   bool get gender => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -69,6 +70,7 @@ abstract class $TeacherModelCopyWith<$Res> {
       int adminMark,
       int pedagogicalMark,
       String? remarks,
+      String? email,
       bool gender});
 }
 
@@ -102,6 +104,7 @@ class _$TeacherModelCopyWithImpl<$Res, $Val extends TeacherModel>
     Object? adminMark = null,
     Object? pedagogicalMark = null,
     Object? remarks = freezed,
+    Object? email = freezed,
     Object? gender = null,
   }) {
     return _then(_value.copyWith(
@@ -173,6 +176,10 @@ class _$TeacherModelCopyWithImpl<$Res, $Val extends TeacherModel>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -207,6 +214,7 @@ abstract class _$$_TeacherModelCopyWith<$Res>
       int adminMark,
       int pedagogicalMark,
       String? remarks,
+      String? email,
       bool gender});
 }
 
@@ -238,6 +246,7 @@ class __$$_TeacherModelCopyWithImpl<$Res>
     Object? adminMark = null,
     Object? pedagogicalMark = null,
     Object? remarks = freezed,
+    Object? email = freezed,
     Object? gender = null,
   }) {
     return _then(_$_TeacherModel(
@@ -309,6 +318,10 @@ class __$$_TeacherModelCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -338,6 +351,7 @@ class _$_TeacherModel implements _TeacherModel {
       required this.adminMark,
       required this.pedagogicalMark,
       this.remarks,
+      this.email,
       required this.gender});
 
   factory _$_TeacherModel.fromJson(Map<String, dynamic> json) =>
@@ -378,11 +392,13 @@ class _$_TeacherModel implements _TeacherModel {
   @override
   final String? remarks;
   @override
+  final String? email;
+  @override
   final bool gender;
 
   @override
   String toString() {
-    return 'TeacherModel(id: $id, familyName: $familyName, firstName: $firstName, beforeMariageName: $beforeMariageName, dateOfBirth: $dateOfBirth, placeOfBirth: $placeOfBirth, dateOfFirstAppointment: $dateOfFirstAppointment, schoolId: $schoolId, statusId: $statusId, echelon: $echelon, lastDeg: $lastDeg, dateOfValid: $dateOfValid, sciDegId: $sciDegId, dateOfLastAudit: $dateOfLastAudit, adminMark: $adminMark, pedagogicalMark: $pedagogicalMark, remarks: $remarks, gender: $gender)';
+    return 'TeacherModel(id: $id, familyName: $familyName, firstName: $firstName, beforeMariageName: $beforeMariageName, dateOfBirth: $dateOfBirth, placeOfBirth: $placeOfBirth, dateOfFirstAppointment: $dateOfFirstAppointment, schoolId: $schoolId, statusId: $statusId, echelon: $echelon, lastDeg: $lastDeg, dateOfValid: $dateOfValid, sciDegId: $sciDegId, dateOfLastAudit: $dateOfLastAudit, adminMark: $adminMark, pedagogicalMark: $pedagogicalMark, remarks: $remarks, email: $email, gender: $gender)';
   }
 
   @override
@@ -420,31 +436,34 @@ class _$_TeacherModel implements _TeacherModel {
             (identical(other.pedagogicalMark, pedagogicalMark) ||
                 other.pedagogicalMark == pedagogicalMark) &&
             (identical(other.remarks, remarks) || other.remarks == remarks) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.gender, gender) || other.gender == gender));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      familyName,
-      firstName,
-      beforeMariageName,
-      dateOfBirth,
-      placeOfBirth,
-      dateOfFirstAppointment,
-      schoolId,
-      statusId,
-      echelon,
-      lastDeg,
-      dateOfValid,
-      sciDegId,
-      dateOfLastAudit,
-      adminMark,
-      pedagogicalMark,
-      remarks,
-      gender);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        familyName,
+        firstName,
+        beforeMariageName,
+        dateOfBirth,
+        placeOfBirth,
+        dateOfFirstAppointment,
+        schoolId,
+        statusId,
+        echelon,
+        lastDeg,
+        dateOfValid,
+        sciDegId,
+        dateOfLastAudit,
+        adminMark,
+        pedagogicalMark,
+        remarks,
+        email,
+        gender
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -479,6 +498,7 @@ abstract class _TeacherModel implements TeacherModel {
       required final int adminMark,
       required final int pedagogicalMark,
       final String? remarks,
+      final String? email,
       required final bool gender}) = _$_TeacherModel;
 
   factory _TeacherModel.fromJson(Map<String, dynamic> json) =
@@ -518,6 +538,8 @@ abstract class _TeacherModel implements TeacherModel {
   int get pedagogicalMark;
   @override
   String? get remarks;
+  @override
+  String? get email;
   @override
   bool get gender;
   @override

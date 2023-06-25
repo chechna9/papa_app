@@ -23,6 +23,7 @@ class TeacherModel with _$TeacherModel {
     required int adminMark,
     required int pedagogicalMark,
     String? remarks,
+    String? email,
     required bool gender,
   }) = _TeacherModel;
 

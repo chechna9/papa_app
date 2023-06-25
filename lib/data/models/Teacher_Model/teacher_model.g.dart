@@ -25,6 +25,7 @@ _$_TeacherModel _$$_TeacherModelFromJson(Map<String, dynamic> json) =>
       adminMark: json['adminMark'] as int,
       pedagogicalMark: json['pedagogicalMark'] as int,
       remarks: json['remarks'] as String?,
+      email: json['email'] as String?,
       gender: json['gender'] as bool,
     );
 
@@ -47,5 +48,6 @@ Map<String, dynamic> _$$_TeacherModelToJson(_$_TeacherModel instance) =>
       'adminMark': instance.adminMark,
       'pedagogicalMark': instance.pedagogicalMark,
       'remarks': instance.remarks,
+      'email': instance.email,
       'gender': instance.gender,
     };
