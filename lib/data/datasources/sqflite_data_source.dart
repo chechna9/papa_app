@@ -1,4 +1,4 @@
-import 'package:papa_app/data/helpers/sql_helpers.dart/SciDeg_sql_helper.dart';
+import 'package:papa_app/data/helpers/sql_helpers.dart/sciDeg_sql_helper.dart';
 import 'package:papa_app/data/models/SciDeg_Model/sci_deg.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
