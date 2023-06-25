@@ -21,7 +21,6 @@ mixin TeacherSqlHelper {
   static const String teacherEmail = "email";
   static const String teacherGender = 'gender';
 
-  // Todo: add the foreign key constraints
   static String createTableTeacher() => '''
   Create Table $teacherTable(
     $teacherId INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,6 +42,9 @@ mixin TeacherSqlHelper {
     $teacherRemarks TEXT NOT NULL,
     $teacherEmail TEXT NOT NULL,
     $teacherGender TEXT NOT NULL
+    FOREIGN KEY ($teacherSchoolId) REFERENCES school (id),
+    FOREIGN KEY ($teacherStatusId) REFERENCES status (id),
+    FOREIGN KEY ($teacherSciDegId) REFERENCES sci_deg (id),
   )
 ''';
 }

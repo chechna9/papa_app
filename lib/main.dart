@@ -17,8 +17,6 @@ void main() async {
   }
   setupDi();
   await locator.get<SqfliteRepository>().initDataBase();
-  var all = await locator.get<SqfliteRepository>().getAllDegs();
-  print(all.length);
   runApp(const MyApp());
 }
 
