@@ -1,6 +1,6 @@
 import 'package:papa_app/data/models/SciDeg_Model/sci_deg.dart';
 
-mixin SciDegHelper {
+mixin SciDegSqlHelper {
   // SciDeg
   static const String sciDegTable = 'sci_deg';
   static const String sciDegId = 'id';
@@ -15,4 +15,13 @@ mixin SciDegHelper {
     SciDeg(id: 5, name: "ماجستير رياضيات", degree: 5),
     SciDeg(id: 6, name: "ماستر رياضيات", degree: 6),
   ];
+  static String createTableSciDeg() {
+    return '''
+        Create Table $sciDegName (
+          $sciDegId INTEGER PRIMARY KEY AUTOINCREMENT,
+          $sciDegName TEXT NOT NULL,
+          $sciDegDegree INTEGER NOT NULL
+        )
+        ''';
+  }
 }
