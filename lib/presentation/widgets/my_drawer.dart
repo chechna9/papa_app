@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:papa_app/res/app_context_extension.dart';
+import 'package:papa_app/routes/navigation_enums.dart';
+import 'package:papa_app/routes/router_cubit/Navigation/navigation_cubit_cubit.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -29,6 +32,7 @@ class MyDrawer extends StatelessWidget {
               size: context.res.dimens.bigIcon,
             ),
             onTap: () {
+              context.read<NavigationCubit>().navigateTo(ScreenName.home);
               Navigator.pop(context);
             },
           ),
@@ -44,6 +48,7 @@ class MyDrawer extends StatelessWidget {
               size: context.res.dimens.bigIcon,
             ),
             onTap: () {
+              context.read<NavigationCubit>().navigateTo(ScreenName.teachers);
               Navigator.pop(context);
             },
           ),
@@ -59,6 +64,7 @@ class MyDrawer extends StatelessWidget {
               size: context.res.dimens.bigIcon,
             ),
             onTap: () {
+              context.read<NavigationCubit>().navigateTo(ScreenName.schools);
               Navigator.pop(context);
             },
           ),

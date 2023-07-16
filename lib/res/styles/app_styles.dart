@@ -8,4 +8,11 @@ class AppStyles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+
+  TextStyle teacherCardStyle = TextStyle(
+    color: Colors.white,
+    fontFamily: GoogleFonts.notoNaskhArabic().fontFamily,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
 }

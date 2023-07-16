@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:papa_app/res/app_context_extension.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SchoolsScreen extends StatelessWidget {
+  const SchoolsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       child: const Column(
         children: [
           Text(
-            "Home Screen",
+            "Schools Screen",
             style: TextStyle(color: Colors.white),
           ),
         ],

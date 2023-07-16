@@ -14,6 +14,7 @@ class TeacherModel with _$TeacherModel {
     required String placeOfBirth,
     required String dateOfFirstAppointment,
     required int schoolId,
+    required String schoolName,
     required int statusId,
     required int echelon,
     required int lastDeg,

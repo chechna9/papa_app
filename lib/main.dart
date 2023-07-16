@@ -6,6 +6,8 @@ import 'package:papa_app/bloc/home_screen_bloc/cubit/home_screen_cubit.dart';
 import 'package:papa_app/dep_inj.dart';
 import 'package:papa_app/presentation/Screens/base_layout.dart';
 import 'package:papa_app/presentation/Screens/home_screen.dart';
+import 'package:papa_app/presentation/Screens/schools_sreen.dart';
+import 'package:papa_app/presentation/Screens/teachers_screen.dart';
 import 'package:papa_app/repositories/sqflite_repo.dart';
 import 'package:papa_app/routes/app_router.dart';
 import 'package:papa_app/routes/navigation_enums.dart';
@@ -47,6 +49,8 @@ class MyApp extends StatelessWidget {
             return BaseLayout(
               content: switch (state.screen) {
                 ScreenName.home => const HomePage(),
+                ScreenName.teachers => const TeachersScreen(),
+                ScreenName.schools => const SchoolsScreen(),
               },
             );
           },

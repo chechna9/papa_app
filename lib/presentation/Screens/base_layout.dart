@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:papa_app/presentation/widgets/my_drawer.dart';
+import 'package:papa_app/res/app_context_extension.dart';
 
 class BaseLayout extends StatefulWidget {
   final Widget content;
@@ -24,12 +24,15 @@ class _BaseLayoutState extends State<BaseLayout> {
       // appBar: AppBar(),
       key: _scaffoldKey,
       endDrawer: const MyDrawer(),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-            widget.content,
+            SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: widget.content),
             Positioned(
               top: 0,
               right: 0,
@@ -37,9 +40,9 @@ class _BaseLayoutState extends State<BaseLayout> {
                 onPressed: () {
                   _scaffoldKey.currentState!.openEndDrawer();
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.menu,
-                  color: Colors.red,
+                  color: context.res.colors.iconDrawerColor,
                 ),
               ),
             ),

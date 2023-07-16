@@ -28,6 +28,7 @@ mixin _$TeacherModel {
   String get placeOfBirth => throw _privateConstructorUsedError;
   String get dateOfFirstAppointment => throw _privateConstructorUsedError;
   int get schoolId => throw _privateConstructorUsedError;
+  String get schoolName => throw _privateConstructorUsedError;
   int get statusId => throw _privateConstructorUsedError;
   int get echelon => throw _privateConstructorUsedError;
   int get lastDeg => throw _privateConstructorUsedError;
@@ -61,6 +62,7 @@ abstract class $TeacherModelCopyWith<$Res> {
       String placeOfBirth,
       String dateOfFirstAppointment,
       int schoolId,
+      String schoolName,
       int statusId,
       int echelon,
       int lastDeg,
@@ -95,6 +97,7 @@ class _$TeacherModelCopyWithImpl<$Res, $Val extends TeacherModel>
     Object? placeOfBirth = null,
     Object? dateOfFirstAppointment = null,
     Object? schoolId = null,
+    Object? schoolName = null,
     Object? statusId = null,
     Object? echelon = null,
     Object? lastDeg = null,
@@ -140,6 +143,10 @@ class _$TeacherModelCopyWithImpl<$Res, $Val extends TeacherModel>
           ? _value.schoolId
           : schoolId // ignore: cast_nullable_to_non_nullable
               as int,
+      schoolName: null == schoolName
+          ? _value.schoolName
+          : schoolName // ignore: cast_nullable_to_non_nullable
+              as String,
       statusId: null == statusId
           ? _value.statusId
           : statusId // ignore: cast_nullable_to_non_nullable
@@ -205,6 +212,7 @@ abstract class _$$_TeacherModelCopyWith<$Res>
       String placeOfBirth,
       String dateOfFirstAppointment,
       int schoolId,
+      String schoolName,
       int statusId,
       int echelon,
       int lastDeg,
@@ -237,6 +245,7 @@ class __$$_TeacherModelCopyWithImpl<$Res>
     Object? placeOfBirth = null,
     Object? dateOfFirstAppointment = null,
     Object? schoolId = null,
+    Object? schoolName = null,
     Object? statusId = null,
     Object? echelon = null,
     Object? lastDeg = null,
@@ -282,6 +291,10 @@ class __$$_TeacherModelCopyWithImpl<$Res>
           ? _value.schoolId
           : schoolId // ignore: cast_nullable_to_non_nullable
               as int,
+      schoolName: null == schoolName
+          ? _value.schoolName
+          : schoolName // ignore: cast_nullable_to_non_nullable
+              as String,
       statusId: null == statusId
           ? _value.statusId
           : statusId // ignore: cast_nullable_to_non_nullable
@@ -342,6 +355,7 @@ class _$_TeacherModel implements _TeacherModel {
       required this.placeOfBirth,
       required this.dateOfFirstAppointment,
       required this.schoolId,
+      required this.schoolName,
       required this.statusId,
       required this.echelon,
       required this.lastDeg,
@@ -374,6 +388,8 @@ class _$_TeacherModel implements _TeacherModel {
   @override
   final int schoolId;
   @override
+  final String schoolName;
+  @override
   final int statusId;
   @override
   final int echelon;
@@ -398,7 +414,7 @@ class _$_TeacherModel implements _TeacherModel {
 
   @override
   String toString() {
-    return 'TeacherModel(id: $id, familyName: $familyName, firstName: $firstName, beforeMariageName: $beforeMariageName, dateOfBirth: $dateOfBirth, placeOfBirth: $placeOfBirth, dateOfFirstAppointment: $dateOfFirstAppointment, schoolId: $schoolId, statusId: $statusId, echelon: $echelon, lastDeg: $lastDeg, dateOfValid: $dateOfValid, sciDegId: $sciDegId, dateOfLastAudit: $dateOfLastAudit, adminMark: $adminMark, pedagogicalMark: $pedagogicalMark, remarks: $remarks, email: $email, gender: $gender)';
+    return 'TeacherModel(id: $id, familyName: $familyName, firstName: $firstName, beforeMariageName: $beforeMariageName, dateOfBirth: $dateOfBirth, placeOfBirth: $placeOfBirth, dateOfFirstAppointment: $dateOfFirstAppointment, schoolId: $schoolId, schoolName: $schoolName, statusId: $statusId, echelon: $echelon, lastDeg: $lastDeg, dateOfValid: $dateOfValid, sciDegId: $sciDegId, dateOfLastAudit: $dateOfLastAudit, adminMark: $adminMark, pedagogicalMark: $pedagogicalMark, remarks: $remarks, email: $email, gender: $gender)';
   }
 
   @override
@@ -421,6 +437,8 @@ class _$_TeacherModel implements _TeacherModel {
                 other.dateOfFirstAppointment == dateOfFirstAppointment) &&
             (identical(other.schoolId, schoolId) ||
                 other.schoolId == schoolId) &&
+            (identical(other.schoolName, schoolName) ||
+                other.schoolName == schoolName) &&
             (identical(other.statusId, statusId) ||
                 other.statusId == statusId) &&
             (identical(other.echelon, echelon) || other.echelon == echelon) &&
@@ -452,6 +470,7 @@ class _$_TeacherModel implements _TeacherModel {
         placeOfBirth,
         dateOfFirstAppointment,
         schoolId,
+        schoolName,
         statusId,
         echelon,
         lastDeg,
@@ -489,6 +508,7 @@ abstract class _TeacherModel implements TeacherModel {
       required final String placeOfBirth,
       required final String dateOfFirstAppointment,
       required final int schoolId,
+      required final String schoolName,
       required final int statusId,
       required final int echelon,
       required final int lastDeg,
@@ -520,6 +540,8 @@ abstract class _TeacherModel implements TeacherModel {
   String get dateOfFirstAppointment;
   @override
   int get schoolId;
+  @override
+  String get schoolName;
   @override
   int get statusId;
   @override

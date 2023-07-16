@@ -1,1 +1,1 @@
-enum ScreenName { home }
+enum ScreenName { home, teachers, schools }
