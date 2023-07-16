@@ -8,8 +8,27 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SvgPicture.asset(context.res.drawable.darkLogo),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            context.res.colors.dark,
+            context.res.colors.alt1,
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: const Column(
+        children: [
+          Text(
+            "Home Screen",
+            style: TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
     );
   }
 }

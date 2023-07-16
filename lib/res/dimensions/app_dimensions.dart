@@ -42,4 +42,15 @@ class AppDimension extends Dimensions {
 
   @override
   double get imageBorderRadius => 8;
+
+  @override
+  double get bigIcon => 30;
+
+  @override
+  // TODO: implement mediumIcon
+  double get mediumIcon => throw UnimplementedError();
+
+  @override
+  // TODO: implement smallIcon
+  double get smallIcon => throw UnimplementedError();
 }

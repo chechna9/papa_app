@@ -23,10 +23,10 @@ class MyDrawer extends StatelessWidget {
               style: context.res.styles.drawerListStyle,
               textAlign: TextAlign.right,
             ),
-            trailing: const Icon(
+            trailing: Icon(
               Icons.home,
-              color: Colors.white,
-              size: 30,
+              color: context.res.colors.iconDrawerColor,
+              size: context.res.dimens.bigIcon,
             ),
             onTap: () {
               Navigator.pop(context);
@@ -38,10 +38,10 @@ class MyDrawer extends StatelessWidget {
               style: context.res.styles.drawerListStyle,
               textAlign: TextAlign.right,
             ),
-            trailing: const Icon(
+            trailing: Icon(
               Icons.groups,
-              color: Colors.white,
-              size: 30,
+              color: context.res.colors.iconDrawerColor,
+              size: context.res.dimens.bigIcon,
             ),
             onTap: () {
               Navigator.pop(context);
@@ -53,10 +53,10 @@ class MyDrawer extends StatelessWidget {
               style: context.res.styles.drawerListStyle,
               textAlign: TextAlign.right,
             ),
-            trailing: const Icon(
+            trailing: Icon(
               Icons.home_work_sharp,
-              color: Colors.white,
-              size: 30,
+              color: context.res.colors.iconDrawerColor,
+              size: context.res.dimens.bigIcon,
             ),
             onTap: () {
               Navigator.pop(context);

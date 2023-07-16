@@ -17,4 +17,8 @@ abstract class Dimensions {
   double get highElevation;
   //border radius
   double get imageBorderRadius;
+  // icon size
+  double get smallIcon;
+  double get mediumIcon;
+  double get bigIcon;
 }

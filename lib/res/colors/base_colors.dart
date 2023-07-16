@@ -10,4 +10,8 @@ abstract class BaseColors {
   Color get alt1;
   Color get alt2;
   Color get dark;
+  // icon colors
+  Color get iconDrawerColor;
+  // text colors
+  Color get textDrawerColor;
 }

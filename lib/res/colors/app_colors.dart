@@ -50,4 +50,12 @@ class AppColors extends BaseColors {
 
   @override
   Color get dark => const Color(0xFF1E1E1E);
+
+  @override
+  // TODO: implement iconDrawerColor
+  Color get iconDrawerColor => Colors.white;
+
+  @override
+  // TODO: implement textDrawerColor
+  Color get textDrawerColor => Colors.white;
 }

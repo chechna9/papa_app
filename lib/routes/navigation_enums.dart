@@ -1,0 +1,1 @@
+enum ScreenName { home }
