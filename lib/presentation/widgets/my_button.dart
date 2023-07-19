@@ -4,13 +4,21 @@ import 'package:papa_app/res/app_context_extension.dart';
 class MyButton extends StatelessWidget {
   final void Function()? onPressed;
   final String name;
-  const MyButton({super.key, this.onPressed, required this.name});
+  final Color? bgColor;
+  final Color? textColor;
+  const MyButton({
+    super.key,
+    this.onPressed,
+    required this.name,
+    this.bgColor,
+    this.textColor,
+  });
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: context.res.colors.secondary,
+      color: bgColor ?? context.res.colors.secondary,
       padding: EdgeInsets.symmetric(
         horizontal: context.res.dimens.mediumMargin,
         vertical: context.res.dimens.smallMargin,
@@ -21,7 +29,7 @@ class MyButton extends StatelessWidget {
       child: Text(
         name,
         style: TextStyle(
-          color: context.res.colors.primary,
+          color: textColor ?? context.res.colors.primary,
           fontSize: context.res.dimens.smallText,
         ),
       ),

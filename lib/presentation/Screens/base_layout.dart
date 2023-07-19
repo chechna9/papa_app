@@ -26,6 +26,9 @@ class _BaseLayoutState extends State<BaseLayout> {
       endDrawer: const MyDrawer(),
       appBar: AppBar(
         backgroundColor: context.res.colors.dark,
+        actionsIconTheme: IconThemeData(
+          color: context.res.colors.secondary,
+        ),
       ),
       body: SizedBox(
         width: MediaQuery.of(context).size.width,

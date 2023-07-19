@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:papa_app/presentation/widgets/add_teacher_form.dart';
 import 'package:papa_app/presentation/widgets/my_button.dart';
 import 'package:papa_app/presentation/widgets/search_input.dart';
 import 'package:papa_app/presentation/widgets/teacher_card.dart';
@@ -72,7 +73,13 @@ class TeachersScreen extends StatelessWidget {
                 MyButton(
                   name: 'إضافة أستاذ',
                   onPressed: () {
-                    print("added");
+                    showDialog(
+                        context: context,
+                        builder: (context) => Padding(
+                              padding:
+                                  EdgeInsets.all(context.res.dimens.bigMargin),
+                              child: const AddTeacherForm(),
+                            ));
                   },
                 ),
               ],
