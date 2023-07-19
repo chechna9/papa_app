@@ -24,30 +24,13 @@ class _BaseLayoutState extends State<BaseLayout> {
       // appBar: AppBar(),
       key: _scaffoldKey,
       endDrawer: const MyDrawer(),
+      appBar: AppBar(
+        backgroundColor: context.res.colors.dark,
+      ),
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: [
-            SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: widget.content),
-            Positioned(
-              top: 0,
-              right: 0,
-              child: IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState!.openEndDrawer();
-                },
-                icon: Icon(
-                  Icons.menu,
-                  color: context.res.colors.iconDrawerColor,
-                ),
-              ),
-            ),
-          ],
-        ),
+        child: widget.content,
       ),
     );
   }

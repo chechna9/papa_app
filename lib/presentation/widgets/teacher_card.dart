@@ -17,12 +17,15 @@ class TeacherCard extends StatelessWidget {
     return MaterialButton(
       onPressed: () {},
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(25),
       ),
       color: context.res.colors.alt1,
       elevation: 10,
       child: Padding(
-        padding: EdgeInsets.all(context.res.dimens.defaultMargin),
+        padding: EdgeInsets.symmetric(
+          horizontal: context.res.dimens.smallMargin,
+          vertical: context.res.dimens.defaultMargin,
+        ),
         child: Column(
           children: [
             Icon(

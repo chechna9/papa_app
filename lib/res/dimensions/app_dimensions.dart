@@ -2,13 +2,13 @@ import 'dimensions.dart';
 
 class AppDimension extends Dimensions {
   @override
-  double get bigMargin => 20;
+  double get bigMargin => 30;
 
   @override
   double get defaultMargin => 16;
 
   @override
-  double get mediumMargin => 12;
+  double get mediumMargin => 20;
 
   @override
   double get smallMargin => 8;
@@ -42,6 +42,9 @@ class AppDimension extends Dimensions {
 
   @override
   double get imageBorderRadius => 8;
+
+  @override
+  double get drawerIcon => 35;
 
   @override
   double get bigIcon => 60;

@@ -21,4 +21,5 @@ abstract class Dimensions {
   double get smallIcon;
   double get mediumIcon;
   double get bigIcon;
+  double get drawerIcon;
 }

@@ -29,7 +29,7 @@ class MyDrawer extends StatelessWidget {
             trailing: Icon(
               Icons.home,
               color: context.res.colors.iconDrawerColor,
-              size: context.res.dimens.bigIcon,
+              size: context.res.dimens.drawerIcon,
             ),
             onTap: () {
               context.read<NavigationCubit>().navigateTo(ScreenName.home);
@@ -45,7 +45,7 @@ class MyDrawer extends StatelessWidget {
             trailing: Icon(
               Icons.groups,
               color: context.res.colors.iconDrawerColor,
-              size: context.res.dimens.bigIcon,
+              size: context.res.dimens.drawerIcon,
             ),
             onTap: () {
               context.read<NavigationCubit>().navigateTo(ScreenName.teachers);
@@ -58,11 +58,9 @@ class MyDrawer extends StatelessWidget {
               style: context.res.styles.drawerListStyle,
               textAlign: TextAlign.right,
             ),
-            trailing: Icon(
-              Icons.home_work_sharp,
-              color: context.res.colors.iconDrawerColor,
-              size: context.res.dimens.bigIcon,
-            ),
+            trailing: Icon(Icons.home_work_sharp,
+                color: context.res.colors.iconDrawerColor,
+                size: context.res.dimens.drawerIcon),
             onTap: () {
               context.read<NavigationCubit>().navigateTo(ScreenName.schools);
               Navigator.pop(context);
