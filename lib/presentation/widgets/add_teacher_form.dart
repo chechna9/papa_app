@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:papa_app/presentation/widgets/date_field.dart';
 import 'package:papa_app/presentation/widgets/my_button.dart';
+import 'package:papa_app/presentation/widgets/my_date_picker.dart';
 import 'package:papa_app/presentation/widgets/my_drop_down.dart';
 import 'package:papa_app/presentation/widgets/my_text_input.dart';
 import 'package:papa_app/res/app_context_extension.dart';
@@ -10,6 +12,10 @@ class AddTeacherForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController familyNameController = TextEditingController();
+    final TextEditingController firstNameController = TextEditingController();
+    final TextEditingController nameBeforeMarriageController =
+        TextEditingController();
+
     return Material(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
@@ -26,12 +32,7 @@ class AddTeacherForm extends StatelessWidget {
                   MyTextInput(
                     controller: familyNameController,
                     name: 'اللقب',
-                    validator: (v) {
-                      if (v!.isEmpty) {
-                        return 'اللقب لا يمكن أن يكون فارغاً';
-                      }
-                      return null;
-                    },
+                    validator: EmptyValidation,
                   ),
                   const MyDropDown<String>(
                     hint: "الجنس",
@@ -39,6 +40,12 @@ class AddTeacherForm extends StatelessWidget {
                       'ذكر',
                       'أنثى',
                     ],
+                  ),
+                  DateField(
+                    name: 'تاريخ الميلاد',
+                    onSelect: () {
+                      print("Date Selected");
+                    },
                   ),
                 ],
               ),
@@ -68,4 +75,11 @@ class AddTeacherForm extends StatelessWidget {
       ),
     );
   }
+}
+
+String? EmptyValidation(String? value) {
+  if (value!.isEmpty) {
+    return 'الحقل لا يمكن أن يكون فارغاً';
+  }
+  return null;
 }

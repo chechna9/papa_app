@@ -15,4 +15,10 @@ class AppStyles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
+  TextStyle dateField = TextStyle(
+    color: Colors.white,
+    fontFamily: GoogleFonts.notoNaskhArabic().fontFamily,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
 }
